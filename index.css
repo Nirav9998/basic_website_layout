@@ -45,6 +45,7 @@ a {
   margin-inline: auto;
   padding-inline: var(--padding-inline-section);
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .flex {
@@ -59,7 +60,10 @@ a {
   justify-content: space-between;
   margin-top: 10px;
 }
-
+.nav-bar .menu-icon
+{
+  display: none;
+}
 .menu {
   flex-basis: 730px;
 }
@@ -108,7 +112,7 @@ ul {
 } 
 .header-right img{
   height: 500px;
-  width:600px;
+  width:40vw
 }
 
 .header-style{
@@ -119,11 +123,16 @@ ul {
   margin-top: 10px;
 }
 .companies{
-  margin-top:20px
+  margin-top:20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 .company-logo{
   margin-top: 10px;
   justify-content: space-evenly;
+  flex-wrap: wrap
 }
 .company-logo-img{
   width: 70px;
@@ -150,4 +159,61 @@ ul {
   padding: 10px;
   width:60%;
   text-align: center;
+}
+
+@media (max-width:900px) {
+ 
+  .nav-bar{
+    position: relative;
+    overflow: initial;
+  }
+  .nav-bar .menu-icon
+  {
+    display: initial;
+  }
+  
+  .nav-bar .menu{
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    top: 100%;
+    background-color: white ;
+    padding: 30px;
+    transition: 0.2s ease-in-out;
+  }
+  .active
+  {
+    left: 0% !important;
+  }
+
+  .nav-bar .menu ul{
+    flex-direction: column;
+  }
+
+  .feature-desc{
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width:768px){
+  .header-style{
+    flex-direction: column-reverse;
+    gap:25px
+  }
+  .header-left{
+    width:70%;
+  }
+  .header-right img{
+    width:80vw
+  }
+}
+
+@media (max-width:480px){
+  .feature-desc{
+    grid-template-columns: repeat(1,1fr);
+    align-items: center;
+    gap: 10px;
+  }
 }

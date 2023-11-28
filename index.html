@@ -8,16 +8,14 @@
   </head>
   <body>
     <div class="top-banner">
-      <div class="container">
-        <div class="banner_text sm-bolt-text">
+        <div class="banner_text sm-bolt-text"   >
           🤗New to Usability Hub.Open and closed card sorting
         </div>
-      </div>
     </div>
     <nav >
       <div class="container flex nav-bar">
         <div class="logo">UsabilityHub</div>
-        <div class="menu">
+        <div class="menu" id="menu">
           <ul class="flex">
             <li><a href="#" class="hover-link" >Customers</a></li>
             <li><a href="#" class="hover-link">Pricing</a></li>
@@ -25,6 +23,9 @@
             <li><a href="#" class="hover-link secondary-button">Sign In</a></li>
             <li><a href="#" class="hover-link primary-button">Sign Up</a></li>
           </ul>
+        </div>
+        <div class="menu-icon hover-link" id="menu-icon">
+          <i class="fa-solid fa-bars"></i>
         </div>
       </div>
     </nav>
@@ -36,13 +37,13 @@
           <a href="#" class="primary-button hover-link get-started-btn">Get Started</a>
           </div>
         <div class="header-right">
-          <img src="./assets/header-left.jpg">
+          <img src="./assets/header-left.jpg" alt="header-right" >
         </div>
       </div>
     </header>
     <section>
       <div class="container companies">
-        <div class="sm-bolt-text">
+        <div class="sm-bolt-text ">
           The world's best companies rely on Usability to make better design decisions.
         </div>
         <div class="company-logo flex">
@@ -103,5 +104,11 @@
       src="https://kit.fontawesome.com/338deddf07.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document.getElementById("menu-icon").addEventListener("click",()=>{
+        document.getElementById("menu").classList.toggle('active')
+      })
+
+    </script>
   </body>
 </html>
